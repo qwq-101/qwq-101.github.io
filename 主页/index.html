@@ -1,58 +1,75 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>搞机!!!</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* 蓝彩色渐变背景 */
+            background: linear-gradient(135deg, # 007BFF 0%, # 00FFFF 100%);
             margin: 0;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
         h1 {
-            color: # 0333;
+            color: white;
             text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         ul {
             list-style-type: none;
             padding: 0;
+            width: 100%;
             max-width: 600px;
-            margin: 0 auto;
         }
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         a {
             display: block;
-            padding: 10px;
-            background-color: # 007BFF;
-            color: white;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: # 007BFF;
             text-align: center;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            border-radius: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
         }
 
         a:hover {
-            background-color: # 0056b3;
+            background-color: white;
+            color: # 0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
+
 <body>
     <h1>搞机导航</h1>
     <ul>
         <li><a href="https://www.buisi.xyz">首页</a></li>
         <li><a href="https://twrp.me/">Twrp官网</a></li>
         <li><a href="https://orangefox.download/">橙狐官网</a></li>
-        <li><a href="https://www.123684.com/s/j5sZvV-CGZv3">搞机工具</a></li>
-        <li><a href="https://www.123684.com/s/j5sZvV-2GZv3">米6刷机包</a></li>
-        <li><a href="https://www.123684.com/s/j5sZvV-NGzv3">红米k20pro</a></li>
+        <li><a href="https://www.123684.com/s/jSsZVv-RGZv3">搞机工具</a></li>
+        <li><a href="https://www.123684.com/s/jSsZVv-DGZv3">米6刷机包</a></li>
+        <li><a href="https://www.123684.com/s/jSsZVv-rGZv3">红米k20pro</a></li>
     </ul>
 </body>
+
 </html>
