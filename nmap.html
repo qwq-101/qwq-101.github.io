@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>namp命令和用法示例</title>
+</head>
+<body>
+    <h2><a href="index.html">主頁</a></h2>
+    <p>主机发现
+
+        <p>   -sn: Ping扫描，用于发现主机是否在线。
+    
+            <p>  -PS, -PA, -PU, -PY: 使用TCP SYN/ACK、UDP、SCTP进行端口扫描。
+    
+                <p>-n, -R: 控制DNS解析的行为。
+    
+    <h4>端口扫描技术</h4>
+    
+    <p>    -sS: SYN扫描，也称为半开放扫描，不建立完整的TCP连接。
+    
+        <p>  -sT: TCP扫描，使用标准的TCP三次握手过程。
+    
+            <p>   -sU: UDP扫描，用于发现开放的UDP端口。
+    
+                <h4>服务和版本探测</h4>
+    
+                <p>-sV: 探测服务/版本信息，可以通过设置版本扫描强度来控制。
+    
+                    <h4>操作系统检测</h4>
+    
+                    <p>  -O: 启用操作系统检测，可以限制或推测操作系统检测结果。
+    
+        <h4>防火墙/IDS规避和欺骗</h4>
+    
+        <p>   -f: 报文分段，用于绕过防火墙或IDS。
+    
+            <p>  -D: 使用诱饵扫描，混淆扫描来源。
+    
+        <h4>输出格式</h4>
+    
+        <p>  -oN, -oX, -oG, -oA: 输出扫描结果到不同格式的文件。
+    
+        <h4>实际使用示例</h4>
+    
+        <h4>发现主机</h4>
+        <p> nmap -sn 192.168.3.74
+    
+    <h4>端口发现</h4>
+    <p> nmap -sS 192.168.3.74
+    
+    <h4>获取服务版本详细信息</h4>
+    <p> nmap -sV 192.168.3.74
+    
+    <h4>确定主机操作系统</h4>
+    <p> nmap -O 192.168.3.227
+    
+        <p> Nmap是一款多平台支持的工具，适用于Linux、Windows等操作系统。
+            <p> 在使用Nmap时，应遵守法律法规，确保合法合规地进行网络扫描。 </p> 
+</body>
+</html>
