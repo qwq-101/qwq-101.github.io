@@ -124,6 +124,64 @@
             filter: blur(3px);
             opacity: 0.7;
         }
+        /* 竖屏搜索容器样式 */
+.search-container-vertical {
+    margin: 2rem auto;
+    max-width: 90%;
+    text-align: center;
+}
+
+.search-box-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-input-vertical {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-dark);
+    font-size: 1rem;
+    outline: none;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.search-input-vertical::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.search-btn-vertical {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--transition);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.search-btn-vertical:hover {
+    background: linear-gradient(135deg, var(--accent), #f4511e);
+    transform: translateY(-3px);
+}
+
         
         .search-container {
             margin: 2.5rem auto;
@@ -285,7 +343,6 @@
             font-size: 0.9rem;
             opacity: 0.7;
         }
-        
         /* 响应式设计 */
         @media (max-width: 768px) {
             .glass-container {
@@ -325,11 +382,11 @@
             <p>不专业安卓设备刷机工具平台 - 提供最新ROM、Recovery及刷机教程一站式服务</p>
         </div>
         
-        <div class="search-container">
-            <div class="search-box">
-                <input type="text" class="search-input" placeholder="搜索刷机工具、ROM包、教程、设备型号...">
-                <button class="search-btn">
-                    <i class="fas fa-search"></i> 
+        <div class="search-container-vertical">
+            <div class="search-box-vertical">
+                <input type="text" class="search-input-vertical" placeholder="搜索刷机工具、ROM包、教程、设备型号...">
+                <button class="search-btn-vertical">
+                    <i class="fas fa-search"></i>
                     <span>搜索</span>
                 </button>
             </div>
