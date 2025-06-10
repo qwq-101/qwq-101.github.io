@@ -2,22 +2,10 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>搞机导航 - 专业刷机工具平台</title>
+    <title>搞机导航 - 不专业刷机工具平台</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #7e57c2;
-            --primary-dark: #5e35b1;
-            --primary-light: #b39ddb;
-            --accent: #ff7043;
-            --text-light: #f5f5f5;
-            --text-dark: #212121;
-            --glass: rgba(255, 255, 255, 0.18);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -25,348 +13,130 @@
         }
         
         body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
             min-height: 100vh;
-            background: linear-gradient(135deg, #311b92, #4527a0, #5e35b1);
-            font-family: 'PingFang SC', 'SF Pro Display', 'Segoe UI', sans-serif;
-            display: grid;
-            place-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
             padding: 20px;
-            color: var(--text-light);
-            overflow-x: hidden;
-            position: relative;
-        }
-        
-        body::before {
-            content: "";
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            top: -25%;
-            left: -25%;
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(126, 87, 194, 0.2) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(255, 112, 67, 0.15) 0%, transparent 45%),
-                radial-gradient(circle at 30% 70%, rgba(179, 157, 219, 0.18) 0%, transparent 50%);
-            z-index: -1;
-            animation: float 20s infinite linear;
-        }
-        
-        @keyframes float {
-            0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.05); }
-            100% { transform: rotate(360deg) scale(1); }
+            color: #333;
         }
         
         .glass-container {
-            width: 90%;
-            max-width: 1000px;
-            padding: 2.5rem;
-            background: var(--glass);
-            backdrop-filter: blur(20px) saturate(180%);
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 
-                0 15px 35px rgba(0, 0, 0, 0.25),
-                inset 0 0 30px rgba(255, 255, 255, 0.1);
-            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
             overflow: hidden;
-            z-index: 10;
-        }
-        
-        .glass-container::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
-            z-index: -1;
+            padding: 30px;
         }
         
         .header {
             text-align: center;
-            margin-bottom: 2.5rem;
-            position: relative;
-            padding-bottom: 1.5rem;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
         
         .header h1 {
-            font-size: 3.2rem;
+            font-size: 2.8rem;
             font-weight: 700;
+            margin-bottom: 10px;
+            color: #222;
             letter-spacing: 1px;
-            background: linear-gradient(to right, var(--text-light), var(--primary-light));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
         }
         
         .header p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             opacity: 0.85;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        .header::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            border-radius: 50%;
-            filter: blur(3px);
-            opacity: 0.7;
-        }
-        /* 竖屏搜索容器样式 */
-.search-container-vertical {
-    margin: 2rem auto;
-    max-width: 90%;
-    text-align: center;
-}
-
-.search-box-vertical {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.15);
-    padding: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.search-input-vertical {
-    width: 100%;
-    padding: 1rem;
-    border: none;
-    background: rgba(255, 255, 255, 0.9);
-    color: var(--text-dark);
-    font-size: 1rem;
-    outline: none;
-    border-radius: 20px;
-    margin-bottom: 1rem;
-}
-
-.search-input-vertical::placeholder {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.search-btn-vertical {
-    width: 100%;
-    max-width: 300px;
-    padding: 1rem;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: var(--transition);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.search-btn-vertical:hover {
-    background: linear-gradient(135deg, var(--accent), #f4511e);
-    transform: translateY(-3px);
-}
-
-        
-        .search-container {
-            margin: 2.5rem auto;
-            max-width: 700px;
-            position: relative;
-        }
-        
-        .search-box {
-            display: flex;
-            border-radius: 60px;
-            overflow: hidden;
-            box-shadow: 
-                0 8px 20px rgba(0, 0, 0, 0.2),
-                inset 0 0 15px rgba(255, 255, 255, 0.08);
-        }
-        
-        .search-input {
-            flex: 1;
-            padding: 18px 28px;
-            border: none;
-            background: rgba(255, 255, 255, 0.92);
-            color: var(--text-dark);
-            font-size: 1.1rem;
-            outline: none;
-        }
-        
-        .search-input:focus {
-            background: rgba(255, 255, 255, 0.98);
-        }
-        
-        .search-input::placeholder {
-            color: rgba(0, 0, 0, 0.4);
-        }
-        
-        .search-btn {
-            padding: 0 32px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .search-btn:hover {
-            background: linear-gradient(135deg, var(--accent), #f4511e);
-            transform: translateY(-2px);
         }
         
         .nav-section {
-            margin-top: 3rem;
+            margin-bottom: 40px;
         }
         
         .section-title {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
             font-size: 1.4rem;
             font-weight: 600;
-            color: var(--primary-light);
-        }
-        
-        .section-title::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, var(--primary-light), transparent);
+            color: #2d3748;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .nav-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-            padding: 0;
-            list-style: none;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
         }
         
         .nav-item {
-            perspective: 800px;
-            height: 100%;
+            transition: all 0.3s ease;
         }
         
         .nav-link {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            padding: 1.8rem;
-            background: rgba(255, 255, 255, 0.12);
-            border-radius: 16px;
+            display: block;
+            background: rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            border-radius: 12px;
+            padding: 25px;
             text-decoration: none;
-            color: var(--text-light);
-            transition: var(--transition);
-            box-shadow: 
-                0 5px 15px rgba(0, 0, 0, 0.1),
-                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .nav-link::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            color: #333;
+            transition: all 0.3s ease;
             height: 100%;
-            background: linear-gradient(135deg, rgba(126, 87, 194, 0.15), rgba(255, 112, 67, 0.1));
-            opacity: 0;
-            transition: var(--transition);
-            z-index: -1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
         }
         
         .nav-link:hover {
-            transform: translateY(-8px) scale(1.02);
-            background: rgba(255, 255, 255, 0.18);
-            box-shadow: 
-                0 12px 30px rgba(0, 0, 0, 0.25),
-                inset 0 0 0 1px rgba(255, 255, 255, 0.15);
-        }
-        
-        .nav-link:hover::before {
-            opacity: 1;
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
         
         .nav-link i {
             font-size: 2.2rem;
-            margin-bottom: 1rem;
-            color: var(--primary-light);
-            transition: var(--transition);
-        }
-        
-        .nav-link:hover i {
-            color: var(--accent);
-            transform: scale(1.1);
+            margin-bottom: 15px;
+            display: block;
+            color: #4a6572;
         }
         
         .nav-link h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #2d3748;
         }
         
         .nav-link p {
-            font-size: 0.95rem;
-            opacity: 0.8;
-            line-height: 1.5;
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.85;
         }
         
         .footer {
             text-align: center;
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            opacity: 0.7;
+            padding-top: 25px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            font-size: 0.95rem;
+            opacity: 0.8;
         }
-        /* 响应式设计 */
+        
         @media (max-width: 768px) {
             .glass-container {
-                padding: 1.8rem;
-                width: 95%;
+                padding: 20px;
             }
             
             .header h1 {
-                font-size: 2.4rem;
-            }
-            
-            .search-box {
-                flex-direction: column;
-            }
-            
-            .search-input {
-                border-radius: 60px;
-                margin-bottom: 1rem;
-            }
-            
-            .search-btn {
-                border-radius: 60px;
-                padding: 16px;
-                justify-content: center;
+                font-size: 2.2rem;
             }
             
             .nav-grid {
@@ -380,16 +150,6 @@
         <div class="header">
             <h1>搞机导航</h1>
             <p>不专业安卓设备刷机工具平台 - 提供最新ROM、Recovery及刷机教程一站式服务</p>
-        </div>
-        
-        <div class="search-container-vertical">
-            <div class="search-box-vertical">
-                <input type="text" class="search-input-vertical" placeholder="搜索刷机工具、ROM包、教程、设备型号...">
-                <button class="search-btn-vertical">
-                    <i class="fas fa-search"></i>
-                    <span>搜索</span>
-                </button>
-            </div>
         </div>
         
         <div class="nav-section">
@@ -446,44 +206,15 @@
                     <a href="https://www.buisi.xyz" class="nav-link">
                         <i class="fas fa-home"></i>
                         <h3>刷机首页</h3>
-                        <p>访问我们的主站获取更多资源和教程</p>
+                        <p>访问我们的主站不会获取资源和教程</p>
                     </a>
                 </li>
             </ul>
         </div>
         
         <div class="footer">
-            <p>© 2025 不高级搞机导航平台 | 不专业安卓设备刷机解决方案</p>
+            <p>© 2025 不专业搞机导航平台 | 不安卓设备刷机解决方案</p>
         </div>
     </div>
-    
-    <script>
-        document.querySelector('.search-btn').addEventListener('click', function() {
-            const query = document.querySelector('.search-input').value.trim();
-            if(query) {
-                const searchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent(query)}`;
-                window.open(searchUrl, '_blank');
-            }
-        });
-        
-        document.querySelector('.search-input').addEventListener('keypress', function(e) {
-            if(e.key === 'Enter') {
-                document.querySelector('.search-btn').click();
-            }
-        });
-        
-        // 导航项悬停效果增强
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px) scale(1.03)';
-                this.querySelector('i').style.transform = 'rotate(5deg) scale(1.15)';
-            });
-            
-            link.addEventListener('mouseleave', function() {
-                this.style.transform = '';
-                this.querySelector('i').style.transform = '';
-            });
-        });
-    </script>
 </body>
 </html>
